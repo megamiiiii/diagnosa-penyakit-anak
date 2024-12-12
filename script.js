@@ -166,7 +166,13 @@ const gejalaList = {
     `;
     symptomsDiv.appendChild(col);
   }
-  
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+    document.querySelectorAll('#symptoms input[type="checkbox"]:checked').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+  });
+
   // Proses diagnosa
   document.getElementById("diagnoseBtn").addEventListener("click", () => {
     const selectedSymptoms = Array.from(
